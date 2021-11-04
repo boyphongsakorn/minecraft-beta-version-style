@@ -1,21 +1,22 @@
-# Hello world javascript action
+# Minecraft Beta Version Style Github Action
 
-This action prints "Hello World" or "Hello" + the name of a person to greet to the log.
+This Github Action custom "tag" like minecraft snapshot Version (2dig year + "W" + Week in a year + Version of this week "A-Z")
 
 ## Inputs
 
-## `who-to-greet`
-
-**Required** The name of the person to greet. Default `"World"`.
+no need
 
 ## Outputs
 
-## `time`
+## `betaversion`
 
-The time we greeted you.
+generate beta version tag like minecraft snapshot
 
 ## Example usage
 
-uses: boyphongsakorn/minecraft-beta-version-style@v1.0
-with:
-  who-to-greet: 'Mona the Octocat'
+steps:
+  - name: Minecraft Custom Tag
+    id: mctagcustom
+    uses: boyphongsakorn/minecraft-beta-version-style@v1.15
+  - name: echo beta version
+    run: echo "The time was ${{ steps.mctagcustom.outputs.betaversion }}"
