@@ -17,7 +17,7 @@ try {
     const payload = JSON.stringify(github.context.payload, undefined, 2)
     console.log(`The event payload: ${payload}`);
     const tagurl = payload["repository"]["tags_url"]
-    const betatag
+    let betatag
     fetch(tagurl)
     .then(res => res.json())
     .then(body => {
