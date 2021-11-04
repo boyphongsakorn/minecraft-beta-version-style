@@ -27,10 +27,13 @@ try {
                 let aplhabetbefore = element["name"].slice(element["name"].search(beforeversion)+5, element["name"].search(beforeversion)+6);
                 console.log(element["name"].slice(element["name"].search(beforeversion)+5, element["name"].search(beforeversion)+6))
                 gettoit = alphabet[alphabet.indexOf(aplhabetbefore)+1]
+                console.log(alphabet.indexOf(aplhabetbefore))
+                console.log(gettoit)
                 betatag = beforeversion+gettoit
                 return false
             }else{
                 betatag = beforeversion+"A"
+                console.log("ok")
             }
         });
         core.setOutput("betaversion", betatag);
