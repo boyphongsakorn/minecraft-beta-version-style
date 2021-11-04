@@ -1,6 +1,8 @@
 name: 'Minecraft Beta Version Style'
 description: 'Get Beta Version Style Like Minecraft Beta Version (20W41-)'
-color: 'green'
+branding:
+  icon: 'award'  
+  color: 'green'
 #inputs:
 #  who-to-greet:  # id of input
 #    description: 'Who to greet'
