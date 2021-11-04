@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: boyphongsakorn/minecraft-beta-version-style@v1.14
+        uses: boyphongsakorn/minecraft-beta-version-style@v1.15
         #with:
         #  who-to-greet: 'Mona the Octocat'
       # Use the output from the `hello` step

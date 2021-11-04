@@ -23,7 +23,7 @@ try {
     .then(res => res.json())
     .then(body => {
         //body.forEach(element => {
-        body.every(v => {
+        body.every(element => {
             if(element["name"].search(beforeversion) > -1){
                 let aplhabetbefore = element["name"].slice(element["name"].search(beforeversion)+5, element["name"].search(beforeversion)+6);
                 console.log(element["name"].slice(element["name"].search(beforeversion)+5, element["name"].search(beforeversion)+6))
