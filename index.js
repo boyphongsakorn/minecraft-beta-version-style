@@ -18,14 +18,14 @@ try {
     console.log(`The event payload: ${payload}`);
     //console.log(github.context.payload["repository"]["tags_url"])
     const tagurl = github.context.payload["repository"]["tags_url"]
-    let betatag
+    let betatag,gettoit
     fetch(tagurl)
     .then(res => res.json())
     .then(body => {
         body.forEach(element => {
             if(element["name"].search(beforeversion) > -1){
                 let aplhabetbefore = element["name"].slice(element["name"].search(beforeversion)+6, element["name"].search(beforeversion)+7);
-                let gettoit = alphabet[aplhabetbeforebeasts.indexOf(aplhabetbefore)+1]
+                gettoit = alphabet[aplhabetbeforebeasts.indexOf(aplhabetbefore)+1]
                 betatag = beforeversion+gettoit
                 return false
             }else{
