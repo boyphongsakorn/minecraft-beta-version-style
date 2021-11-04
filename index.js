@@ -14,8 +14,8 @@ try {
     let week = Math.ceil((((now.getTime() - onejan.getTime()) / 86400000) + onejan.getDay() + 1) / 7);
     let beforeversion = now.getFullYear().toString().substr(-2)+"W"+week
     // Get the JSON webhook payload for the event that triggered the workflow
-    const payload = JSON.stringify(github.context.payload, undefined, 2)
-    console.log(`The event payload: ${payload}`);
+    //const payload = JSON.stringify(github.context.payload, undefined, 2)
+    //console.log(`The event payload: ${payload}`);
     //console.log(github.context.payload["repository"]["tags_url"])
     const tagurl = github.context.payload["repository"]["tags_url"]
     let betatag,gettoit
