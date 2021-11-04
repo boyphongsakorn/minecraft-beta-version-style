@@ -16,8 +16,8 @@ try {
     // Get the JSON webhook payload for the event that triggered the workflow
     const payload = JSON.stringify(github.context.payload, undefined, 2)
     console.log(`The event payload: ${payload}`);
-    console.log(github.context.payload["repository"])
-    const tagurl = payload["repository"]["tags_url"]
+    //console.log(github.context.payload["repository"]["tags_url"])
+    const tagurl = github.context.payload["repository"]["tags_url"]
     let betatag
     fetch(tagurl)
     .then(res => res.json())
