@@ -7,9 +7,15 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: boyphongsakorn/minecraft-beta-version-style@v1.2
+        uses: boyphongsakorn/minecraft-beta-version-style@v1.3
         #with:
         #  who-to-greet: 'Mona the Octocat'
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.betaversion }}"
+      - name: Bump version and push tag
+        id: tag_version
+        uses: mathieudutour/github-tag-action@v5.6
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          custom_tag: ${{ steps.hello.outputs.betaversion }}
