@@ -30,7 +30,8 @@ try {
                 console.log(alphabet.indexOf(aplhabetbefore))
                 console.log(gettoit)
                 betatag = beforeversion+gettoit
-                return false
+                //return false
+                break;
             }else{
                 betatag = beforeversion+"A"
                 console.log("ok")
