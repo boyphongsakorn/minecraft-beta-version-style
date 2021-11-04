@@ -32,7 +32,7 @@ try {
                 betatag = beforeversion+"A"
             }
         });
-        core.setOutput("betaversion", beforeversion+gettoit);
+        core.setOutput("betaversion", betatag);
     });
     //console.log(now.getFullYear().toString().substr(-2))
 } catch (error) {
