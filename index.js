@@ -22,7 +22,8 @@ try {
     fetch(tagurl)
     .then(res => res.json())
     .then(body => {
-        body.forEach(element => {
+        //body.forEach(element => {
+        body.every(v => {
             if(element["name"].search(beforeversion) > -1){
                 let aplhabetbefore = element["name"].slice(element["name"].search(beforeversion)+5, element["name"].search(beforeversion)+6);
                 console.log(element["name"].slice(element["name"].search(beforeversion)+5, element["name"].search(beforeversion)+6))
@@ -30,13 +31,15 @@ try {
                 console.log(alphabet.indexOf(aplhabetbefore))
                 console.log(gettoit)
                 betatag = beforeversion+gettoit
-                //return false
-                break;
+                return false
+                //break;
             }else{
                 betatag = beforeversion+"A"
                 console.log("ok")
+                return true
             }
         });
+        //});
         core.setOutput("betaversion", betatag);
     });
     //console.log(now.getFullYear().toString().substr(-2))
