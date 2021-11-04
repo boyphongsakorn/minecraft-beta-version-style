@@ -25,7 +25,7 @@ try {
         body.forEach(element => {
             if(element["name"].search(beforeversion) > -1){
                 let aplhabetbefore = element["name"].slice(element["name"].search(beforeversion)+6, element["name"].search(beforeversion)+7);
-                gettoit = alphabet[aplhabetbeforebeasts.indexOf(aplhabetbefore)+1]
+                gettoit = alphabet[alphabet.indexOf(aplhabetbefore)+1]
                 betatag = beforeversion+gettoit
                 return false
             }else{
