@@ -17,6 +17,7 @@ try {
     //const payload = JSON.stringify(github.context.payload, undefined, 2)
     //console.log(`The event payload: ${payload}`);
     //console.log(github.context.payload["repository"]["tags_url"])
+    console.log(github.context.payload["repository"])
     const tagurl = github.context.payload["repository"]["tags_url"]
     let betatag,gettoit
     fetch(tagurl)
