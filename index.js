@@ -18,7 +18,11 @@ try {
     //console.log(`The event payload: ${payload}`);
     //console.log(github.context.payload["repository"]["tags_url"])
     console.log(github.context.payload["repository"])
-    const tagurl = github.context.payload["repository"]["tags_url"]
+    if(github.context.payload){
+        const tagurl = github.context.payload["repository"]["tags_url"]
+    }else{
+        const tagurl = 'https://api.github.com/repos/'+process.env.GITHUB_REPOSITORY+'/tags'
+    }
     let betatag,gettoit
     fetch(tagurl)
     .then(res => res.json())
