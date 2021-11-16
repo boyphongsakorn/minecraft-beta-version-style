@@ -4,7 +4,7 @@ on:
       - master
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '30 15 * * *'
+    - cron:  '00 17 * * *'
 
 jobs:
   hello_world_job:
