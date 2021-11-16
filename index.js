@@ -21,8 +21,10 @@ try {
     let tagurl
     if(github.context.payload.length != 0){
         tagurl = github.context.payload["repository"]["tags_url"]
+        console.log('yes')
     }else{
         tagurl = 'https://api.github.com/repos/'+process.env.GITHUB_REPOSITORY+'/tags'
+        console.log('no')
     }
     console.log(tagurl)
     let betatag,gettoit
