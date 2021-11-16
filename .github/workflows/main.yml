@@ -1,4 +1,10 @@
-on: [push]
+on: 
+  push:
+    branches:
+      - master
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '0 6 * * *'
 
 jobs:
   hello_world_job:
@@ -7,7 +13,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: boyphongsakorn/minecraft-beta-version-style@v1.15
+        uses: boyphongsakorn/minecraft-beta-version-style@v21W47A
         #with:
         #  who-to-greet: 'Mona the Octocat'
       # Use the output from the `hello` step
