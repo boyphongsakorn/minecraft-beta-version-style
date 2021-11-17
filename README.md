@@ -18,7 +18,7 @@ generate beta version tag like minecraft snapshot
 steps:
   - name: Minecraft Custom Tag
     id: mctagcustom
-    uses: boyphongsakorn/minecraft-beta-version-style@v1.15
+    uses: boyphongsakorn/minecraft-beta-version-style@v1.16
   - name: echo beta version
     run: echo "The time was ${{ steps.mctagcustom.outputs.betaversion }}"
 ```
