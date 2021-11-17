@@ -19,7 +19,7 @@ try {
     //console.log(github.context.payload["repository"]["tags_url"])
     //console.log(github.context.payload["repository"])
     let tagurl
-    if(github.context.payload.length != 0){
+    if(github.context.payload["repository"].length != 0){
         tagurl = github.context.payload["repository"]["tags_url"]
         console.log('yes')
     }else{
