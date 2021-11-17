@@ -19,12 +19,12 @@ try {
     //console.log(github.context.payload["repository"]["tags_url"])
     //console.log(github.context.payload["repository"])
     let tagurl
-    if(github.context.payload["repository"]["tags_url"] === undefined){
-        tagurl = 'https://api.github.com/repos/'+process.env.GITHUB_REPOSITORY+'/tags'
-        console.log('no')
-    }else{
+    try{
         tagurl = github.context.payload["repository"]["tags_url"]
         console.log('yes')
+    }catch(err) {
+        tagurl = 'https://api.github.com/repos/'+process.env.GITHUB_REPOSITORY+'/tags'
+        console.log('no')
     }
     console.log(tagurl)
     let betatag,gettoit
