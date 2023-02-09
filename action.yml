@@ -12,5 +12,5 @@ outputs:
   betaversion: # id of output
     description: 'Beta Version Style Like Minecraft Beta Version'
 runs:
-  using: 'node14'
+  using: 'node16'
   main: 'index.js'
