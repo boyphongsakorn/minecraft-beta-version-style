@@ -26,9 +26,13 @@ try {
         tagurl = 'https://api.github.com/repos/' + process.env.GITHUB_REPOSITORY + '/tags'
         console.log('no')
     }
+    let headers = { headers: { Authorization: 'token ' + process.env.GITHUB_TOKEN } }
+    if (process.env.GITHUB_TOKEN == undefined) {
+        headers = {}
+    }
     console.log(tagurl)
     let betatag, gettoit
-    fetch(tagurl, { headers: { Authorization: 'token ' + process.env.GITHUB_TOKEN } })
+    fetch(tagurl, headers)
         .then(res => res.json())
         .then(body => {
             console.log(body)
