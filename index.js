@@ -23,12 +23,12 @@ try {
         tagurl = github.context.payload["repository"]["tags_url"]
         console.log('yes')
     } catch (err) {
-        tagurl = 'https://api.github.com/repos/' + process.env.GITHUB_REPOSITORY + '/tags?access_token=' + process.env.GITHUB_TOKEN
+        tagurl = 'https://api.github.com/repos/' + process.env.GITHUB_REPOSITORY + '/tags'
         console.log('no')
     }
     console.log(tagurl)
     let betatag, gettoit
-    fetch(tagurl, { headers: { Authorization: 'Bearer' + process.env.GITHUB_TOKEN } })
+    fetch(tagurl, { headers: { Authorization: 'token ' + process.env.GITHUB_TOKEN } })
         .then(res => res.json())
         .then(body => {
             console.log(body)
