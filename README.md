@@ -4,7 +4,7 @@ This Github Action custom "tag" like minecraft snapshot Version (2dig year + "W"
 
 ## Inputs
 
-no need
+```github_token: ${{ secrets.GITHUB_TOKEN }} # need that if your repo is private```
 
 ## Outputs
 
