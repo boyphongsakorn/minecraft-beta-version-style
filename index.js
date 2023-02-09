@@ -28,7 +28,7 @@ try {
     }
     console.log(tagurl)
     let betatag, gettoit
-    fetch(tagurl, { headers: { Authorization: 'token ' + process.env.GITHUB_TOKEN } })
+    fetch(tagurl, { headers: { Authorization: 'Bearer' + process.env.GITHUB_TOKEN } })
         .then(res => res.json())
         .then(body => {
             console.log(body)
