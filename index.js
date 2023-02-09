@@ -41,8 +41,8 @@ try {
                         let afteryear = element["name"].slice(yearindex)
                         console.log(yearindex)
                         console.log(afteryear)
-                        let aplhabetbefore = afteryear.slice(afteryear.search(beforeversion) + 5, afteryear.search(beforeversion) + 6);
-                        console.log(afteryear.slice(afteryear.search(beforeversion) + 5, afteryear.search(beforeversion) + 6))
+                        let aplhabetbefore = afteryear.slice(afteryear.search(beforeversion) + 4, afteryear.search(beforeversion) + 5);
+                        console.log(afteryear.slice(afteryear.search(beforeversion) + 4, afteryear.search(beforeversion) + 5))
                         gettoit = alphabet[alphabet.indexOf(aplhabetbefore) + 1]
                         console.log(alphabet.indexOf(aplhabetbefore))
                         console.log(gettoit)
