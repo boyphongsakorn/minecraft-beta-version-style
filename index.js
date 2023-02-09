@@ -56,6 +56,7 @@ try {
                     }
                 });
             } catch (error) {
+                console.log(error)
                 betatag = beforeversion + "A"
                 console.log("catch but ok")
             }
