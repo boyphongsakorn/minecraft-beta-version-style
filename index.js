@@ -28,7 +28,7 @@ try {
     }
     console.log(tagurl)
     let betatag, gettoit
-    fetch(tagurl)
+    fetch(tagurl, { headers: { Authorization: 'token ' + process.env.GITHUB_TOKEN } })
         .then(res => res.json())
         .then(body => {
             //body.forEach(element => {
@@ -57,7 +57,7 @@ try {
                 });
             } catch (error) {
                 betatag = beforeversion + "A"
-                console.log("ok")
+                console.log("catch but ok")
             }
             //if(body.length == 0){
             //betatag = beforeversion+"A"
