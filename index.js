@@ -35,8 +35,12 @@ try {
             try {
                 body.every(element => {
                     if (element["name"].search(beforeversion) > -1) {
-                        let aplhabetbefore = element["name"].slice(element["name"].search(beforeversion) + 5, element["name"].search(beforeversion) + 6);
-                        console.log(element["name"].slice(element["name"].search(beforeversion) + 5, element["name"].search(beforeversion) + 6))
+                        //get index of year
+                        let yearindex = element["name"].search(now.getFullYear().toString().substr(-2))
+                        //remove before year
+                        let afteryear = element["name"].slice(yearindex + 2)
+                        let aplhabetbefore = afteryear.slice(afteryear.search(beforeversion) + 5, afteryear.search(beforeversion) + 6);
+                        console.log(afteryear.slice(afteryear.search(beforeversion) + 5, afteryear.search(beforeversion) + 6))
                         gettoit = alphabet[alphabet.indexOf(aplhabetbefore) + 1]
                         console.log(alphabet.indexOf(aplhabetbefore))
                         console.log(gettoit)
