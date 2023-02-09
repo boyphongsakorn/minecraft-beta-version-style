@@ -23,7 +23,7 @@ try {
         tagurl = github.context.payload["repository"]["tags_url"]
         console.log('yes')
     } catch (err) {
-        tagurl = 'https://api.github.com/repos/' + process.env.GITHUB_REPOSITORY + '/tags'
+        tagurl = 'https://api.github.com/repos/' + process.env.GITHUB_REPOSITORY + '/tags?access_token=' + process.env.GITHUB_TOKEN
         console.log('no')
     }
     console.log(tagurl)
