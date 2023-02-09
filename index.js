@@ -48,6 +48,10 @@ try {
                 return true
             }
         });
+        if(body.length == 0){
+            betatag = beforeversion+"A"
+            console.log("ok")
+        }
         //});
         core.setOutput("betaversion", betatag);
     });
