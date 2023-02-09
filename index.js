@@ -31,6 +31,7 @@ try {
     fetch(tagurl, { headers: { Authorization: 'token ' + process.env.GITHUB_TOKEN } })
         .then(res => res.json())
         .then(body => {
+            console.log(body)
             //body.forEach(element => {
             try {
                 body.every(element => {
