@@ -39,6 +39,8 @@ try {
                         let yearindex = element["name"].search(now.getFullYear().toString().substr(-2))
                         //remove before year
                         let afteryear = element["name"].slice(yearindex + 2)
+                        console.log(yearindex)
+                        console.log(afteryear)
                         let aplhabetbefore = afteryear.slice(afteryear.search(beforeversion) + 5, afteryear.search(beforeversion) + 6);
                         console.log(afteryear.slice(afteryear.search(beforeversion) + 5, afteryear.search(beforeversion) + 6))
                         gettoit = alphabet[alphabet.indexOf(aplhabetbefore) + 1]
