@@ -38,7 +38,7 @@ try {
                         //get index of year
                         let yearindex = element["name"].search(now.getFullYear().toString().substr(-2))
                         //remove before year
-                        let afteryear = element["name"].slice(yearindex + 2)
+                        let afteryear = element["name"].slice(yearindex)
                         console.log(yearindex)
                         console.log(afteryear)
                         let aplhabetbefore = afteryear.slice(afteryear.search(beforeversion) + 5, afteryear.search(beforeversion) + 6);
