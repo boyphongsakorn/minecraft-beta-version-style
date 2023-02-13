@@ -38,28 +38,33 @@ try {
             console.log(body)
             //body.forEach(element => {
             try {
-                body.every(element => {
-                    if (element["name"].search(beforeversion) > -1) {
-                        //get index of year
-                        let yearindex = element["name"].search(now.getFullYear().toString().substr(-2))
-                        //remove before year
-                        let afteryear = element["name"].slice(yearindex)
-                        console.log(yearindex)
-                        console.log(afteryear)
-                        let aplhabetbefore = afteryear.slice(afteryear.search(beforeversion) + 4, afteryear.search(beforeversion) + 5);
-                        console.log(afteryear.slice(afteryear.search(beforeversion) + 4, afteryear.search(beforeversion) + 5))
-                        gettoit = alphabet[alphabet.indexOf(aplhabetbefore) + 1]
-                        console.log(alphabet.indexOf(aplhabetbefore))
-                        console.log(gettoit)
-                        betatag = beforeversion + gettoit
-                        return false
-                        //break;
-                    } else {
-                        betatag = beforeversion + "A"
-                        console.log("ok")
-                        return true
-                    }
-                });
+                if (body.length == 0) {
+                    betatag = beforeversion + "A"
+                    console.log("ok")
+                } else {
+                    body.every(element => {
+                        if (element["name"].search(beforeversion) > -1) {
+                            //get index of year
+                            let yearindex = element["name"].search(now.getFullYear().toString().substr(-2))
+                            //remove before year
+                            let afteryear = element["name"].slice(yearindex)
+                            console.log(yearindex)
+                            console.log(afteryear)
+                            let aplhabetbefore = afteryear.slice(afteryear.search(beforeversion) + 4, afteryear.search(beforeversion) + 5);
+                            console.log(afteryear.slice(afteryear.search(beforeversion) + 4, afteryear.search(beforeversion) + 5))
+                            gettoit = alphabet[alphabet.indexOf(aplhabetbefore) + 1]
+                            console.log(alphabet.indexOf(aplhabetbefore))
+                            console.log(gettoit)
+                            betatag = beforeversion + gettoit
+                            return false
+                            //break;
+                        } else {
+                            betatag = beforeversion + "A"
+                            console.log("ok")
+                            return true
+                        }
+                    });
+                }
             } catch (error) {
                 console.log(error)
                 betatag = beforeversion + "A"
