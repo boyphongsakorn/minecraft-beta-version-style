@@ -12,6 +12,10 @@ try {
     let now = new Date();
     let onejan = new Date(now.getFullYear(), 0, 1);
     let week = Math.ceil((((now.getTime() - onejan.getTime()) / 86400000) + onejan.getDay() + 1) / 7);
+    //add 0 if week is less than 10
+    if (week < 10) {
+        week = "0" + week
+    }
     let beforeversion = now.getFullYear().toString().substr(-2) + "W" + week
     // Get the JSON webhook payload for the event that triggered the workflow
     //const payload = JSON.stringify(github.context.payload, undefined, 2)
@@ -50,8 +54,8 @@ try {
                             let afteryear = element["name"].slice(yearindex)
                             console.log(yearindex)
                             console.log(afteryear)
-                            let aplhabetbefore = afteryear.slice(afteryear.search(beforeversion) + 4, afteryear.search(beforeversion) + 5);
-                            console.log(afteryear.slice(afteryear.search(beforeversion) + 4, afteryear.search(beforeversion) + 5))
+                            let aplhabetbefore = afteryear.slice(afteryear.search(beforeversion) + 5, afteryear.search(beforeversion) + 6);
+                            console.log(afteryear.slice(afteryear.search(beforeversion) + 5, afteryear.search(beforeversion) + 6))
                             gettoit = alphabet[alphabet.indexOf(aplhabetbefore) + 1]
                             console.log(alphabet.indexOf(aplhabetbefore))
                             console.log(gettoit)
