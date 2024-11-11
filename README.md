@@ -18,7 +18,7 @@ generate beta version tag like minecraft snapshot
 steps:
   - name: Minecraft Custom Tag
     id: mctagcustom
-    uses: boyphongsakorn/minecraft-beta-version-style@v1.16
+    uses: boyphongsakorn/minecraft-beta-version-style@v1.17
     with:
       github_token: ${{ secrets.GITHUB_TOKEN }} # need that if your repo is private
   - name: echo beta version
